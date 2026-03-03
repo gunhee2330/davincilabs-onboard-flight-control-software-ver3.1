@@ -1,0 +1,39 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   3 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "p0_set"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "UAM_Flight_control:3487:130-136"\
+    }\
+    ChartData {\
+      Name         "p0_Pa"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "UAM_Flight_control:3487:137-142"\
+    }\
+    ChartData {\
+      Name         "last_arm"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "UAM_Flight_control:3487:143-151"\
+    }\
+  }
+  %return ChartDataElements
+%endfunction
