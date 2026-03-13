@@ -1,0 +1,46 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   4 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "hold_n"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "UAM_Flight_control:4956::2036:75-81"\
+    }\
+    ChartData {\
+      Name         "hold_e"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "UAM_Flight_control:4956::2036:82-88"\
+    }\
+    ChartData {\
+      Name         "alt_cmd"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "UAM_Flight_control:4956::2036:89-96"\
+    }\
+    ChartData {\
+      Name         "init_flag_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "UAM_Flight_control:4956::2036:97-106"\
+    }\
+  }
+  %return ChartDataElements
+%endfunction
